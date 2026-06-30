@@ -2,7 +2,7 @@
 
 Static landing page for **Doris AY**, hosted on GitHub Pages.
 
-> **Status:** Initial setup — waiting for final HTML. Replace `index.html` with the finished page when ready.
+> **Status:** Live — Doris Landing Page V1 deployed to `index.html`.
 
 ## Project structure
 

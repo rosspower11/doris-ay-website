@@ -1,47 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doris AY</title>
-    <meta name="description" content="Doris AY — landing page coming soon." />
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doris Au-Yeung — Stop reacting to your life. Start leading it.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FEF7F2;
+    --cream2:#F4EBE3;
+    --wine:#5E0D10;
+    --green:#88A16A;
+    --desert:#CE7C38;
+    --taupe:#B89785;
+    --cinnamon:#a34e27;
+    --ink:#2B2422;
+    --body:#5a4f49;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .serif{font-family:'Cormorant Garamond',serif;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 56px;}
+  .label{font-family:'Jost',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.28em;font-size:12px;color:var(--taupe);}
+  .btn{display:inline-block;background:var(--cinnamon);color:#fdf3ec;text-decoration:none;padding:18px 42px;font-family:'Jost';font-weight:400;letter-spacing:.18em;text-transform:uppercase;font-size:13px;transition:background .25s;}
+  .btn:hover{background:var(--wine);}
+  .tlink{display:inline-block;font-family:'Jost';letter-spacing:.16em;text-transform:uppercase;font-size:13px;color:var(--wine);text-decoration:none;border-bottom:1px solid var(--wine);padding-bottom:5px;}
+  h2.head{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.02;font-size:clamp(34px,5vw,60px);}
+  h2.head .it{display:block;font-style:italic;color:var(--taupe);}
+  .wine-word{color:var(--wine);}
 
-      body {
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        font-family: system-ui, -apple-system, sans-serif;
-        background: #faf9f7;
-        color: #1a1a1a;
-      }
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px 56px;background:rgba(254,247,242,.85);backdrop-filter:blur(8px);border-bottom:1px solid rgba(43,36,34,.07);}
+  nav .logo{font-family:'Allura',cursive;font-size:34px;line-height:1;letter-spacing:.01em;color:var(--wine);}
+  nav .nbtn{background:var(--wine);color:var(--cream);padding:12px 26px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;}
+  @media(max-width:760px){nav .nbtn{display:none;}nav{padding:18px 26px;}}
 
-      main {
-        text-align: center;
-        padding: 2rem;
-      }
+  /* HERO */
+  .hero-band{height:210px;background:linear-gradient(120deg,#b9a99a,#8a7d72 40%,#cdbfb2);position:relative;margin-top:66px;}
+  .hero-band:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(254,247,242,.0) 70%);}
+  .hero{text-align:center;padding:64px 0 90px;}
+  .hero .eyebrow{margin-bottom:30px;}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.0;font-size:clamp(42px,7vw,88px);letter-spacing:.005em;}
+  .hero h1 .l1{color:var(--wine);display:block;}
+  .hero h1 .l2{color:var(--taupe);font-style:italic;display:block;margin-top:4px;}
+  .hero p.sub{max-width:640px;margin:34px auto 44px;font-size:17px;color:var(--body);}
+  .hero .actions{display:flex;gap:34px;align-items:center;justify-content:center;flex-wrap:wrap;}
+  .trust{margin-top:70px;}
+  .trust .label{color:var(--taupe);opacity:.8;}
 
-      h1 {
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
-        font-weight: 600;
-        letter-spacing: -0.02em;
-      }
+  /* USP strip */
+  .usp{background:var(--wine);color:var(--cream);text-align:center;padding:40px 0;}
+  .usp .serif{font-size:clamp(22px,3vw,32px);font-weight:300;font-style:italic;letter-spacing:.01em;}
+  .usp .serif b{font-style:normal;font-weight:500;}
 
-      p {
-        margin-top: 0.75rem;
-        color: #666;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Doris AY</h1>
-      <p>Landing page coming soon.</p>
-    </main>
-  </body>
+  /* generic section */
+  section.blk{padding:96px 0;}
+  .eyebrow-row{display:flex;align-items:center;gap:18px;margin-bottom:30px;}
+  .eyebrow-row .line{flex:1;height:1px;background:rgba(43,36,34,.16);}
+
+  /* LEAD PANEL */
+  .lead{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start;}
+  .lead .body p{font-size:18px;color:var(--body);margin-top:22px;}
+  .lead .quote{border-left:2px solid var(--wine);padding:8px 0 8px 28px;}
+  .lead .quote p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;line-height:1.4;color:var(--ink);}
+  @media(max-width:820px){.lead{grid-template-columns:1fr;gap:34px;}}
+
+  /* HOW IT WORKS */
+  .how{background:var(--cream2);}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:20px;}
+  .step .n{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--desert);line-height:1;}
+  .step h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;margin:14px 0 12px;color:var(--wine);}
+  .step p{font-size:15.5px;color:var(--body);}
+  @media(max-width:820px){.steps{grid-template-columns:1fr;gap:30px;}}
+
+  /* WHAT WE DO */
+  .feat{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 48px;margin-top:14px;}
+  .feat .item{border-top:1px solid rgba(43,36,34,.14);padding-top:20px;}
+  .feat .item h4{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:21px;color:var(--ink);margin-bottom:6px;}
+  .feat .item p{font-size:15px;color:var(--body);}
+  .intro-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:var(--taupe);max-width:620px;margin-bottom:36px;}
+  @media(max-width:820px){.feat{grid-template-columns:1fr;}}
+
+  /* REASONS */
+  .reasons{background:var(--wine);color:var(--cream);}
+  .reasons .eyebrow-row .line{background:rgba(254,247,242,.25);}
+  .reasons .label{color:rgba(254,247,242,.6);}
+  .rgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px 60px;margin-top:24px;}
+  .reason{display:flex;gap:20px;}
+  .reason .rn{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--desert);line-height:1;min-width:42px;}
+  .reason h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;margin-bottom:8px;line-height:1.2;}
+  .reason p{font-size:15px;color:rgba(254,247,242,.82);}
+  @media(max-width:820px){.rgrid{grid-template-columns:1fr;gap:30px;}}
+
+  /* KIND WORDS */
+  .kw{background:var(--cream2);}
+  .kwgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;margin-top:20px;}
+  .kwgrid .q p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--ink);border-top:1px solid rgba(43,36,34,.2);padding-top:26px;}
+  .kwgrid .who{margin-top:20px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);}
+  .note{font-size:12px;color:var(--desert);letter-spacing:.04em;margin-top:40px;text-align:center;}
+  @media(max-width:820px){.kwgrid{grid-template-columns:1fr;gap:34px;}}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center;}
+  .about .portrait{aspect-ratio:4/5;border-radius:200px 200px 12px 12px;background:linear-gradient(160deg,#3a1f1a,#1f1210 60%,#4a2c22);position:relative;overflow:hidden;}
+  .about .portrait span{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(254,247,242,.45);}
+  .about h2{margin-bottom:24px;}
+  .about p{font-size:17px;color:var(--body);margin-bottom:18px;}
+  @media(max-width:820px){.about{grid-template-columns:1fr;gap:34px;}}
+
+  /* WHO FOR */
+  .whofor{background:var(--cream2);}
+  .who2{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:24px;}
+  .who2 .card{background:var(--cream);padding:40px;border:1px solid rgba(43,36,34,.08);}
+  .who2 .card .tag{display:inline-block;padding:7px 18px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:22px;}
+  .who2 .card.yes .tag{background:var(--green);}
+  .who2 .card.no .tag{background:var(--taupe);}
+  .who2 .card p{font-size:16px;color:var(--body);}
+  @media(max-width:820px){.who2{grid-template-columns:1fr;}}
+
+  /* FULL STOP */
+  .fullstop{text-align:center;padding:110px 0;}
+  .fullstop h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,5.5vw,64px);line-height:1.05;}
+  .fullstop h2 .l1{color:var(--wine);display:block;}
+  .fullstop h2 .l2{color:var(--taupe);font-style:italic;display:block;}
+  .fullstop p{max-width:620px;margin:30px auto 40px;font-size:17px;color:var(--body);}
+
+  /* OFFER */
+  .offer{background:var(--wine);color:var(--cream);text-align:center;padding:96px 0;}
+  .offer .label{color:rgba(254,247,242,.6);margin-bottom:24px;display:block;}
+  .offer h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,4.4vw,52px);margin-bottom:26px;}
+  .offer h2 em{color:var(--desert);font-style:italic;}
+  .offer .summary{max-width:680px;margin:0 auto 30px;font-size:16px;color:rgba(254,247,242,.85);}
+  .offer .price{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:.04em;margin-bottom:36px;color:var(--cream);}
+  .offer .price span{color:var(--desert);}
+  .offer .btn{background:var(--desert);color:#2b1410;}
+  .offer .btn:hover{background:var(--cream);color:var(--wine);}
+  .offer .reassure{margin-top:24px;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(254,247,242,.7);}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:var(--cream);padding:60px 0;}
+  footer .frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:center;}
+  footer .logo{font-family:'Allura',cursive;font-size:46px;line-height:1;color:var(--cream);}
+  footer .meta{font-size:13px;letter-spacing:.06em;color:rgba(254,247,242,.7);text-align:right;line-height:1.9;}
+  footer a{color:rgba(254,247,242,.7);text-decoration:none;}
+  @media(max-width:760px){footer .frow{flex-direction:column;align-items:flex-start;}footer .meta{text-align:left;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">Doris Au-Yeung</span>
+  <a class="nbtn" href="#offer">Book a Taster</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-band"></div>
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow label">Somatic &amp; Breathwork . 1-to-1 Transformation . Conscious Leadership</div>
+    <h1>
+      <span class="l1">You're doing everything right</span>
+      <span class="l2">and still running on empty.</span>
+    </h1>
+    <p class="sub">A private 3-month space to stop reacting to your life and start leading it again, built for high performers who have tried everything else.</p>
+    <div class="actions">
+      <a class="btn" href="#offer">Book Your 50-Minute Taster</a>
+      <a class="tlink" href="#about">Read My Story &rarr;</a>
+    </div>
+    <div class="trust"><span class="label">Trusted by leaders across Hong Kong, Singapore &amp; beyond</span></div>
+  </div>
+</div>
+
+<!-- USP -->
+<div class="usp">
+  <div class="wrap"><p class="serif">18 years in finance. <b>Now I help leaders breathe again.</b></p></div>
+</div>
+
+<!-- LEAD PANEL -->
+<section class="blk">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="label">Does this sound like you?</span><span class="line"></span></div>
+    <div class="lead">
+      <div class="body">
+        <h2 class="head"><span class="wine-word">The life looks right.</span><span class="it">So why does it feel like this?</span></h2>
+        <p>From the outside, your life looks like the one you worked so hard to build, the title, the income, the calendar that everyone else wants a piece of. But somewhere along the way you stopped leading your days and started reacting to them, moving from one demand to the next without ever getting a moment that actually belongs to you.</p>
+        <p>You have tried the gym, the therapy, the yoga and the stack of books that promised to fix it, and none of it has touched the thing that keeps you wired, tired and quietly running on empty.</p>
+      </div>
+      <div class="quote">
+        <p>"The most profound shift I experienced wasn't in a therapist's chair. It was in my body, finally."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="blk how">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="label">How it works</span><span class="line"></span></div>
+    <h2 class="head" style="margin-bottom:50px;"><span class="wine-word">Three months.</span><span class="it">From running on empty to leading again.</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Start with a 50-minute taster</h3>
+        <p>We meet one to one so you can feel the work for yourself, get clear on what is really draining you, and see whether this is the right fit before you commit to anything.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Move through three months of private sessions</h3>
+        <p>Each week we meet for ninety minutes of somatic and breathwork, with simple daily practices in between and direct support on Telegram, so the change happens in your real life, not just in the room.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>Get your clarity, calm and time back</h3>
+        <p>Month by month you stop reacting and start leading, making bigger decisions from a steadier place and finally having the space to be present with the people who matter most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="blk">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="label">What we do</span><span class="line"></span></div>
+    <p class="intro-line">A private, three-month experience built around you and the way your life actually runs.</p>
+    <div class="feat">
+      <div class="item"><h4>Just you and me, one to one</h4><p>No group, no audience, no performing. The whole space is yours.</p></div>
+      <div class="item"><h4>Somatic and breathwork at the core</h4><p>We work with your body and your breath, so the calm is something you feel and can return to, not just an idea you understand.</p></div>
+      <div class="item"><h4>Rewriting the stories that keep you stuck</h4><p>Using NLP, we go to the patterns underneath the stress, so you stop fighting the same loop and finally move past it.</p></div>
+      <div class="item"><h4>Weekly 90-minute sessions</h4><p>Real time each week to slow down, think clearly and reset, no matter how full the diary is.</p></div>
+      <div class="item"><h4>Daily practices between sessions</h4><p>Small, simple things that fit a demanding schedule, so the shift holds in your everyday life instead of fading by Monday.</p></div>
+      <div class="item"><h4>Direct access on Telegram</h4><p>Set hours to reach me between sessions, so you are supported in the moments it actually matters, not left waiting a week.</p></div>
+      <div class="item"><h4>Every session recorded, plus extras</h4><p>Come back to anything whenever you need it, so the work keeps giving long after we finish.</p></div>
+      <div class="item"><h4>A new theme every month</h4><p>A clear focus each month, so three months build into a real transformation rather than a string of nice conversations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 REASONS -->
+<section class="blk reasons">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="label">8 reasons why</span><span class="line"></span></div>
+    <h2 class="head" style="color:var(--cream);margin-bottom:50px;">Why leaders choose<span class="it" style="color:var(--desert);">to work with me.</span></h2>
+    <div class="rgrid">
+      <div class="reason"><div class="rn">1</div><div><h4>I have sat exactly where you sit</h4><p>Eighteen years in finance, PE and VC means you never have to explain the pressure to me, because I have lived it.</p></div></div>
+      <div class="reason"><div class="rn">2</div><div><h4>I build this for you, not adapt it for you</h4><p>I design every part of the work around the reality of a demanding leader, so nothing about it feels generic or off the shelf.</p></div></div>
+      <div class="reason"><div class="rn">3</div><div><h4>I reach what the gym and the books could not</h4><p>You have tried the usual fixes, and I take you to the level underneath them where the real change actually happens.</p></div></div>
+      <div class="reason"><div class="rn">4</div><div><h4>You feel the difference in your body</h4><p>I lead with somatic and breathwork so you get a calm you can physically return to, rather than one more thing you only understand in theory.</p></div></div>
+      <div class="reason"><div class="rn">5</div><div><h4>I fit this around a life that is already full</h4><p>I shape the weekly sessions, short daily practices and Telegram access around your schedule, so support never becomes another burden.</p></div></div>
+      <div class="reason"><div class="rn">6</div><div><h4>I am in your corner between sessions</h4><p>I give you set hours of direct access, so you are never doing this alone in the moments that usually catch you off guard.</p></div></div>
+      <div class="reason"><div class="rn">7</div><div><h4>I make the work compound over three months</h4><p>I give you a new theme each month, so you build steadily toward a real transformation instead of one-off breakthroughs that fade.</p></div></div>
+      <div class="reason"><div class="rn">8</div><div><h4>You get your life back, not just your calm</h4><p>I keep us focused on clearer decisions, steadier nerves and real presence with the people who matter, far beyond simply feeling less stressed.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KIND WORDS -->
+<section class="blk kw">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="label">Kind words</span><span class="line"></span></div>
+    <h2 class="head" style="margin-bottom:50px;"><span class="wine-word">Kind words</span><span class="it">from people I've walked beside.</span></h2>
+    <div class="kwgrid">
+      <div class="q"><p>"Working with Doris has truly been one of the best investments I've made. She saw my potential before I could. She pushed me to try, and she was right."</p><div class="who">Vanoosheh</div></div>
+      <div class="q"><p>"Doris has ignited a newfound passion within me. Everything I do has become more dynamic, more engaging, and more alive."</p><div class="who">Audrey</div></div>
+      <div class="q"><p>"The work with Doris was the most important one in realising and finding my own way. I gained knowledge, an amazing mentor, and a really great friend."</p><div class="who">Nana</div></div>
+    </div>
+    <p class="note">[ Placeholder testimonials carried from existing client words. Swap in 2 to 3 quotes from finance and corporate clients before launch. ]</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="blk">
+  <div class="wrap">
+    <div class="about">
+      <div class="portrait"><span>Doris — portrait</span></div>
+      <div>
+        <div class="label" style="margin-bottom:18px;">About Doris</div>
+        <h2 class="head"><span class="serif" style="color:var(--ink);">Hey,</span> <span class="it" style="display:inline;color:var(--wine);font-style:italic;">I'm Doris.</span></h2>
+        <p>I spent eighteen years in finance, climbing through the PE and VC world, working alongside founders and leaders who looked like they had everything handled. I looked like that too. On the inside I was running on empty, holding it all together right up until the day I could not, and the burnout I had been outrunning finally caught me.</p>
+        <p>That was the moment everything changed. In 2019 I stopped performing my way through life and started doing the deeper work, with my body, my breath and the stories I had been telling myself for years. It gave me back something I had quietly given up on, a sense of calm and clarity that did not depend on the next win.</p>
+        <p>This matters to me because I know how lonely that high-functioning emptiness feels, and I know it does not have to be the price of success. I do this work so that the people still sitting where I sat do not have to lose themselves to get there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO FOR -->
+<section class="blk whofor">
+  <div class="wrap">
+    <div class="eyebrow-row"><span class="label">Who this is for</span><span class="line"></span></div>
+    <div class="who2">
+      <div class="card yes">
+        <span class="tag">This is for you if</span>
+        <p>You are a founder or executive, likely between thirty-five and forty-five, moving through Hong Kong, Singapore or another big city at full speed, still in the role, still delivering, and quietly exhausted by it all. You have already tried the gym, the therapy, the yoga and the books, and you are ready to do honest, private work over three months and actually change how you live.</p>
+      </div>
+      <div class="card no">
+        <span class="tag">This is not for you if</span>
+        <p>You are looking for a quick hack or a one-off fix between meetings. If you want a podcast-length tip to file away and forget, I am not your person. This work asks for your honesty and your presence, and it gives back something far greater in return.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL STOP -->
+<section class="fullstop">
+  <div class="wrap">
+    <h2><span class="l1">Stop reacting to your life.</span><span class="l2">Start leading it again.</span></h2>
+    <p>I give high-performing leaders a private, three-month space to find their clarity, calm and time, using the somatic and breathwork that reaches what nothing else has. You do not have to keep running on empty to keep succeeding, and you do not have to figure this out alone.</p>
+    <a class="btn" href="#offer">Book Your 50-Minute Taster</a>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="wrap">
+    <span class="label">Ready when you are</span>
+    <h2>A private, 3-month <em>1-to-1</em> transformation.</h2>
+    <p class="summary">Weekly ninety-minute sessions, simple daily practices, direct access to me on Telegram, every session recorded, and a new theme each month, all built around getting your clarity, calm and time back. Start with a fifty-minute taster so you can feel the work before you commit to anything.</p>
+    <div class="price">Investment: <span>[ confirm price ]</span></div>
+    <a class="btn" href="#">Book Your 50-Minute Taster</a>
+    <p class="reassure">No pressure and no obligation, just fifty minutes to experience the work and see if it is right for you.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <span class="logo">Doris Au-Yeung</span>
+      <div class="meta">
+        <a href="https://www.dorisay.com">www.dorisay.com</a> &nbsp;·&nbsp; <a href="https://instagram.com/doris.ay">@doris.ay</a><br>
+        Conscious Leadership · Somatic &amp; Breathwork
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
